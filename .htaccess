@@ -1,1 +1,3 @@
-ErrorDocument 404 http://www.ashishverma.me/404.html
+Options +Indexes 
+# or #
+IndexIgnore *
