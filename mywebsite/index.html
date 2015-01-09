@@ -314,11 +314,16 @@
               <textarea id="contact-message" name="comments" rows="1" class="label_better requiredField" data-new-placeholder="Message" placeholder="Message"></textarea>
           </span>
           
-          <input type="hidden" name="_next" value="#" />
+          <input type="hidden" name="_next" value="index.html" />
           
           <p>
           	<button name="submit" type="submit" class="btn btn-meflat icon-left" id="send-button" onClick="sendMessage()">
-          		<i class="fa fa-paper-plane"></i>&nbsp;&nbsp;Send Message
+          		<div id="sendMssgText">
+                	<i class="fa fa-paper-plane"></i>&nbsp;&nbsp;Send Message
+                </div>
+                <div id="sentText" style="display:none">
+                	Message Sent!
+                </div>
             </button>
           </p>          
       </form>
