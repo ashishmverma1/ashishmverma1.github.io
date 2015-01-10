@@ -36,7 +36,27 @@ body
 	padding-bottom:80px;
 }
 
+::-webkit-scrollbar 
+{  
+    width: 10px;
+}  
 
+::-webkit-scrollbar-track 
+{  
+    background-color:rgb(0,0,0);  
+    border-left: 2px solid rgb(0,0,51);  
+}  
+
+::-webkit-scrollbar-thumb 
+{  
+    background-color:rgb(153,153,153); 
+	border-radius: 10px; 
+}  
+
+::-webkit-scrollbar-thumb:hover 
+{  
+    background-color:rgb(0,204,153);  
+} 
 
 
 /* ============ NAVBAR ============*/
@@ -83,7 +103,7 @@ body
 	color:rgb(235,235,235); 
 }
 
-#myNavbar li
+#myNavbar li 
 {
 	font-size:20px;
 	font-weight:700;
@@ -91,19 +111,25 @@ body
 	opacity: 0.5;
     position:relative;
     z-index:1;
-	-webkit-transition: opacity 0.8s;
-	  -moz-transition: opacity 0.8s;
-	  -ms-transition: opacity 0.8s;
-	  -o-transition: opacity 0.8s;
-	  transition: opacity 0.8s;
+	-webkit-transition: opacity 0.5s;
+	  -moz-transition: opacity 0.5s;
+	  -ms-transition: opacity 0.5s;
+	  -o-transition: opacity 0.5s;
+	  transition: opacity 0.5s;
 }
+
 
 .navbar-inverse .navbar-nav>li>a 
 {
 	color:rgb(255,255,255);
 }
 
-#myNavbar li:hover, #myNavbar li.active
+#myNavbar li:hover
+{
+	opacity:1;
+}
+
+#myNavbar li.active
 {
 	text-decoration: overline;
 	opacity:1;
