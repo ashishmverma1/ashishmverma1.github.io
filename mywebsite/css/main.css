@@ -371,7 +371,6 @@ body
 #works
 {
 	text-align:center;
-	overflow:hidden;
 }
 
 #works h1
@@ -403,6 +402,14 @@ body
 	filter:alpha(opacity=100);
 	overflow:hidden;
 	display:inline-block;
+}
+
+@media (max-width: 400px)
+{
+	.project-item
+	{
+		margin:25px auto 25px auto;
+	}
 }
 
 .project-item img 
