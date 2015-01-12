@@ -36,6 +36,11 @@ body
 	padding-bottom:80px;
 }
 
+.inactive-link
+{
+	cursor:not-allowed;
+}
+
 ::-webkit-scrollbar 
 {  
     width: 10px;
@@ -79,7 +84,7 @@ body
 	float:left;
 }
 
-.navbar-brand a:hover
+.navbar-brand a:hover, .navbar-brand a:active
 {
 	text-decoration:none;
 }
@@ -280,6 +285,7 @@ body
 
 .item h2
 {
+	font-weight:300;
 	-webkit-transition:color 0.5s;
 	  -moz-transition:color 0.5s;
 	  -ms-transition:color 0.5s;
@@ -328,6 +334,11 @@ body
 	text-align:center;
 }
 
+#aboutMe header
+{
+	margin-bottom:60px;
+}
+
 #aboutMe h1
 {
 	font-weight:600;
@@ -340,6 +351,35 @@ body
     font-size:22px;
     font-weight:400;
     letter-spacing:0.02em;
+}
+
+#cv
+{
+	margin:40px auto 20px auto;
+	padding:10px 10px 10px 10px;
+	background-color:rgb(0,204,102);
+	text-align:center;
+	font-size:18px;
+	border:rgb(51,51,51) 1px solid;
+	border-radius:10px;
+	width:200px;
+    -webkit-transition:all 0.3s ease-out;
+    transition:all 0.3s ease-out;
+}
+
+#cv:hover
+{
+	background-color:rgb(0,235,102);
+}
+
+#cv a
+{
+	color:rgb(255,255,255);
+}
+
+#cv a:hover, #cv a:active
+{
+	text-decoration:none;
 }
 
 
@@ -487,11 +527,10 @@ body
 .project-item .hover-mask p 
 {
     color:#38A5DB;
-    margin:0;
+    margin:0 10px auto 10px;
     font-size:14px;
     line-height:24px;
     font-weight:600;
-    text-transform:uppercase;
     text-align:center;
     -webkit-transition:all 0.3s ease-out;
     transition:all 0.3s ease-out;
