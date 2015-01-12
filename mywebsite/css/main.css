@@ -111,6 +111,14 @@ body
 	}
 }
 
+@media (max-width: 330px)
+{
+	#navbar-brand-text
+	{
+		font-size:22px;
+	}
+}
+
 #myNavbar li 
 {
 	font-size:20px;
@@ -379,6 +387,7 @@ body
 #works
 {
 	text-align:center;
+	overflow:hidden;
 }
 
 #works h1
@@ -394,6 +403,11 @@ body
     font-weight:400;
     letter-spacing:0.02em;
 	margin-bottom:50px;
+}
+
+.project-item-container
+{
+	overflow:hidden;
 }
 
 .project-item
