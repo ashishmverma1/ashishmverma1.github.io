@@ -39,16 +39,11 @@ function turingInit(){
 		turingB = getRandomInt(1, 5);
 		turingAns = turingA + turingB;
 		
-		$("#turing-a").html(turingA);
-		$("#turing-b").html(turingB);
-		
-		
 		var canvas = document.getElementById("turing-canvas");
 		var ctx = canvas.getContext("2d");
 		ctx.font = "italic bold 22px Titillium Web";
 		ctx.fillStyle = "rgb(244,244,244)";
 		ctx.fillText(turingA + "  +  " + turingB + "  =  ", 2, 18);
-		
 		
 		var turingInputBox = $("#turing-answer");
 		turingInputBox.data('oldVal', turingInputBox.val());
