@@ -33,7 +33,7 @@ function getRandomInt(min, max) {
 }
 
 function turingInit(){
-		var turingA, turingB, turingAns;
+		var turingA, turingB, turingAns, userAns;
 		
 		turingA = getRandomInt(1, 5);
 		turingB = getRandomInt(1, 5);
@@ -42,8 +42,14 @@ function turingInit(){
 		$("#turing-a").html(turingA);
 		$("#turing-b").html(turingB);
 		
-		$("#turing-answer").change(function(){
-				var userAns = parseInt($("#turing-answer").val(), 10);
+		var turingInputBox = $("#turing-answer");
+		turingInputBox.data('oldVal', turingInputBox.val());
+		
+		turingInputBox.bind("propertychange change click keyup input paste", function(event){
+			if (turingInputBox.data('oldVal') != turingInputBox.val()) {
+				turingInputBox.data('oldVal', turingInputBox.val());
+				
+				userAns = parseInt(turingInputBox.val(), 10);
 				
 				if(userAns == turingAns){
 					$("#contact-form").attr("action", "http://formspree.io/ashish_verma_1@yahoo.com");
@@ -52,7 +58,8 @@ function turingInit(){
 					$("#contact-form").attr("action", "");
 					$("#send-button").attr("disabled", true);
 				}
-		});
+			}
+    });
 }
 
 
