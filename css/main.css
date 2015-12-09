@@ -705,6 +705,11 @@ input:hover, textarea:hover, input:focus, textarea:focus
 	margin-top:-5px;
 }
 
+#turing-canvas
+{
+	vertical-align:sub;
+}
+
 
 /*==================== FOOTER ===============*/
 #main-footer p
