@@ -1,0 +1,40 @@
+body {
+  background-color: rgb(40, 40, 40);
+  color: rgb(220, 220, 220);
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+td {
+  width: 33.33%;
+  border-bottom: 1px solid rgb(80, 80, 80);
+}
+
+th {
+  background-color: rgb(80, 80, 80);
+}
+
+table {
+  width: 100%;
+}
+
+.table-container {
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.red-bg {
+  background-color: red;
+}
+
+.green-bg {
+  background-color: green;
+}
+
+#buy-graph, #sell-graph {
+  height: 300px;
+  width: 80%;
+  margin: auto;
+  margin-top: 50px;
+}

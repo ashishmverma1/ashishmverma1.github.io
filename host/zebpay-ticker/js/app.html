@@ -1,30 +1,80 @@
+<h1>Zebpay Ticker</h1>
+
 <div class="table-container">
   <table>
     <tr>
-      <th></th>
-      <th>Price (INR)</th>
-      <th>Change (INR)</th>
+      <th>Field</th>
+      <th>Value</th>
+      <th>Change</th>
     </tr>
 
     <tr>
-      <td>Market</td>
-      <td>{{ $ctrl.priceData.market | number }}</td>
-      <td ng-class="{'white-bg': $ctrl.delta.market == 0 , 'red-bg': $ctrl.delta.market < 0, 'green-bg': $ctrl.delta.market > 0}">{{ (($ctrl.delta.market > 0) ? '+' : '') + ($ctrl.delta.market | number) }}</td>
+      <td>
+        Market Price (INR)
+      </td>
+      <td>
+        {{ $ctrl.getCurrencyFormattedString($ctrl.priceData.market, false) }}
+      </td>
+      <td ng-class="{
+                      'white-bg': $ctrl.delta.market == 0, 
+                      'red-bg': $ctrl.delta.market < 0, 
+                      'green-bg': $ctrl.delta.market > 0
+                    }">
+        {{ $ctrl.getCurrencyFormattedString($ctrl.delta.market, true) }}
+      </td>
     </tr>
+    
     <tr>
-      <td>Buy</td>
-      <td>{{ $ctrl.priceData.buy | number }}</td>
-      <td ng-class="{'white-bg': $ctrl.delta.buy == 0 , 'red-bg': $ctrl.delta.buy < 0, 'green-bg': $ctrl.delta.buy > 0}">{{ (($ctrl.delta.buy > 0) ? '+' : '') + ($ctrl.delta.buy | number) }}</td>
+      <td>
+        Buy Price (INR)
+      </td>
+      <td>
+        {{ $ctrl.getCurrencyFormattedString($ctrl.priceData.buy, false) }}
+      </td>
+      <td ng-class="{
+                      'white-bg': $ctrl.delta.buy == 0, 
+                      'red-bg': $ctrl.delta.buy < 0, 
+                      'green-bg': $ctrl.delta.buy > 0
+                    }">
+        {{ $ctrl.getCurrencyFormattedString($ctrl.delta.buy, true) }}
+      </td>
     </tr>
+    
     <tr>
-      <td>Sell</td>
-      <td>{{ $ctrl.priceData.sell | number }}</td>
-      <td ng-class="{'white-bg': $ctrl.delta.sell == 0 , 'red-bg': $ctrl.delta.sell < 0, 'green-bg': $ctrl.delta.sell > 0}">{{ (($ctrl.delta.sell > 0) ? '+' : '') + ($ctrl.delta.sell | number) }}</td>
+      <td>
+        Sell Price (INR)
+      </td>
+      <td>
+        {{ $ctrl.getCurrencyFormattedString($ctrl.priceData.sell, false) }}
+      </td>
+      <td ng-class="{
+                      'white-bg': $ctrl.delta.sell == 0, 
+                      'red-bg': $ctrl.delta.sell < 0, 
+                      'green-bg': $ctrl.delta.sell > 0
+                    }">
+        {{ $ctrl.getCurrencyFormattedString($ctrl.delta.sell, true) }}
+      </td>
     </tr>
+    
     <tr>
-      <td>Volume</td>
-      <td>{{ $ctrl.priceData.volume | number }}</td>
-      <td ng-class="{'white-bg': $ctrl.delta.volume == 0 , 'red-bg': $ctrl.delta.volume < 0, 'green-bg': $ctrl.delta.volume > 0}">{{ (($ctrl.delta.volume > 0) ? '+' : '') + ($ctrl.delta.volume | number) }}</td
+      <td>
+        Volume
+      </td>
+      <td>
+        {{ $ctrl.priceData.volume | number }}
+      </td>
+      <td ng-class="{
+                      'white-bg': $ctrl.delta.volume == 0, 
+                      'red-bg': $ctrl.delta.volume < 0, 
+                      'green-bg': $ctrl.delta.volume > 0
+                    }">
+        {{ (($ctrl.delta.volume > 0) ? '+' : '') + ($ctrl.delta.volume | number) }}
+      </td>
     </tr>
   </table>
+</div>
+
+<div class="graph-container">
+  <div id="buy-graph"></div>
+  <div id="sell-graph"></div>
 </div>
