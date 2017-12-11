@@ -1,4 +1,14 @@
-<h1>Zebpay Ticker</h1>
+<div class="page-title">
+  <div class="title">Zebpay Ticker</div>
+  <div class="update-speed-selector-container">
+    <span class="update-speed-selector-title">update in</span>
+    <span class="update-speed-selector" ng-class="{'update-speed-selected': $ctrl.updateSpeed === 1000}" ng-click="$ctrl.setUpdateSpeed(1000)">1s</span>
+    <span class="update-speed-selector" ng-class="{'update-speed-selected': $ctrl.updateSpeed === 2000}" ng-click="$ctrl.setUpdateSpeed(2000)">2s</span>
+    <span class="update-speed-selector" ng-class="{'update-speed-selected': $ctrl.updateSpeed === 3000}" ng-click="$ctrl.setUpdateSpeed(3000)">3s</span>
+    <span class="update-speed-selector" ng-class="{'update-speed-selected': $ctrl.updateSpeed === 4000}" ng-click="$ctrl.setUpdateSpeed(4000)">4s</span>
+    <span class="update-speed-selector" ng-class="{'update-speed-selected': $ctrl.updateSpeed === 5000}" ng-click="$ctrl.setUpdateSpeed(5000)">5s</span>
+  </div>
+</div>
 
 <div class="table-container">
   <table>
@@ -16,14 +26,14 @@
         {{ $ctrl.getCurrencyFormattedString($ctrl.priceData.market, false) }}
       </td>
       <td ng-class="{
-                      'white-bg': $ctrl.delta.market == 0, 
-                      'red-bg': $ctrl.delta.market < 0, 
+                      'white-bg': $ctrl.delta.market == 0,
+                      'red-bg': $ctrl.delta.market < 0,
                       'green-bg': $ctrl.delta.market > 0
                     }">
         {{ $ctrl.getCurrencyFormattedString($ctrl.delta.market, true) }}
       </td>
     </tr>
-    
+
     <tr>
       <td>
         Buy Price (INR)
@@ -32,14 +42,14 @@
         {{ $ctrl.getCurrencyFormattedString($ctrl.priceData.buy, false) }}
       </td>
       <td ng-class="{
-                      'white-bg': $ctrl.delta.buy == 0, 
-                      'red-bg': $ctrl.delta.buy < 0, 
+                      'white-bg': $ctrl.delta.buy == 0,
+                      'red-bg': $ctrl.delta.buy < 0,
                       'green-bg': $ctrl.delta.buy > 0
                     }">
         {{ $ctrl.getCurrencyFormattedString($ctrl.delta.buy, true) }}
       </td>
     </tr>
-    
+
     <tr>
       <td>
         Sell Price (INR)
@@ -48,14 +58,14 @@
         {{ $ctrl.getCurrencyFormattedString($ctrl.priceData.sell, false) }}
       </td>
       <td ng-class="{
-                      'white-bg': $ctrl.delta.sell == 0, 
-                      'red-bg': $ctrl.delta.sell < 0, 
+                      'white-bg': $ctrl.delta.sell == 0,
+                      'red-bg': $ctrl.delta.sell < 0,
                       'green-bg': $ctrl.delta.sell > 0
                     }">
         {{ $ctrl.getCurrencyFormattedString($ctrl.delta.sell, true) }}
       </td>
     </tr>
-    
+
     <tr>
       <td>
         Volume
@@ -64,8 +74,8 @@
         {{ $ctrl.priceData.volume | number }}
       </td>
       <td ng-class="{
-                      'white-bg': $ctrl.delta.volume == 0, 
-                      'red-bg': $ctrl.delta.volume < 0, 
+                      'white-bg': $ctrl.delta.volume == 0,
+                      'red-bg': $ctrl.delta.volume < 0,
                       'green-bg': $ctrl.delta.volume > 0
                     }">
         {{ (($ctrl.delta.volume > 0) ? '+' : '') + ($ctrl.delta.volume | number) }}
@@ -75,6 +85,17 @@
 </div>
 
 <div class="graph-container">
-  <div id="buy-graph"></div>
-  <div id="sell-graph"></div>
+  <div class="buy-graph-container">
+    <div class="graph-container-inner">
+      <div id="buy-graph"></div>
+    </div>
+    <div class="overlay-1"></div>
+    <div class="overlay-2"></div>
+  </div>
+
+  <div class="sell-graph-container">
+    <div id="sell-graph"></div>
+    <div class="overlay-1"></div>
+    <div class="overlay-2"></div>
+  </div>
 </div>

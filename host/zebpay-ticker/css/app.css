@@ -18,6 +18,30 @@ table {
   width: 100%;
 }
 
+.page-title .title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: rgb(145, 187, 255);
+}
+
+.update-speed-selector {
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: rgb(70, 70, 70);
+  border-radius: 30%;
+  height: 20px;
+  width: 24px;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.update-speed-selected {
+  background-color: rgb(50, 100, 150);
+  color: white;
+}
+
 .table-container {
   width: 60%;
   margin: auto;
@@ -25,16 +49,29 @@ table {
 }
 
 .red-bg {
-  background-color: red;
+  background-color: rgb(230, 50, 80);
+  color: white;
 }
 
 .green-bg {
-  background-color: green;
+  background-color: rgb(50, 130, 80);
+  color: white;
+}
+
+.graph-container-inner {
+  position: relative;
 }
 
 #buy-graph, #sell-graph {
   height: 300px;
-  width: 80%;
+  width: 60%;
   margin: auto;
-  margin-top: 50px;
+}
+
+#buy-graph {
+  margin-top: 25px;
+}
+
+#sell-graph {
+  margin-top: 10px;
 }
