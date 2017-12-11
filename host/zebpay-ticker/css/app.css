@@ -48,6 +48,12 @@ table {
   margin-top: 50px;
 }
 
+@media only screen and (max-width: 1000px) {
+    .table-container {
+        width: 100%;
+    }
+}
+
 .red-bg {
   background-color: rgb(230, 50, 80);
   color: white;
@@ -66,6 +72,12 @@ table {
   height: 300px;
   width: 60%;
   margin: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+    #buy-graph, #sell-graph {
+        width: 100%;
+    }
 }
 
 #buy-graph {
