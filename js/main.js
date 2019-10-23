@@ -58,7 +58,7 @@ function turingInit(){
 				userAns = parseInt(turingInputBox.val(), 10);
 				
 				if(userAns == turingAns){
-					$("#contact-form").attr("action", "http://formspree.io/ashish_verma_1@yahoo.com");
+					$("#contact-form").attr("action", "https://formspree.io/ashish_verma_1@yahoo.com");
 					$("#send-button").attr("disabled", false);
 				} else {
 					$("#contact-form").attr("action", "");
